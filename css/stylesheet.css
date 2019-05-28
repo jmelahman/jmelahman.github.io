@@ -2,12 +2,10 @@ body {
   font-family: 'Noto Sans', sans-serif;
   padding: 0;
   margin: 0;
-  background-image: radial-gradient(circle, navy, black);
-}
-
-.center {
-  height: 800px;
-  position: relative;
+  background-color: black;
+  background-image: radial-gradient(ellipse, navy, black);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .center div {
@@ -17,10 +15,6 @@ body {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-}
-
-.vertical-menu {
-
 }
 
 .vertical-menu a {
@@ -45,7 +39,6 @@ body {
 }
 
 .overlay {
-  height: 100%;
   width: 0;
   position: fixed;
   z-index: 1;
