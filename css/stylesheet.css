@@ -1,182 +1,97 @@
-.light {
-  color: #F4F4F4;
-  background-color: rgba(244, 244, 244, 0.7);
-}
-
-.blue {
-  color: #00c8ff;
-  background-color: rgba(0, 200, 255, 0.7);
-}
-
-.background {
-  color: #23232d;
-  background-color: rgba(30, 30, 40, 0.7);
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {
-      padding-top: 15px;
-  }
-  .sidenav a {
-      font-size: 12px;
-  }
-  .sidenav span {
-      font-size: 12px;
-  }
-}
-
 body {
-  background-color: #f4f4f4;
-  height: 100%;
+  font-family: 'Noto Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-image: radial-gradient(circle, navy, black);
 }
 
-/* Style page content */
-
-.main {
-  margin-left: 48px;
-  /* Same as the width of the sidebar */
-  padding: 0px 10px;
+.center { 
+  height: 800px;
+  position: relative;
 }
 
-.active {
-  background-color: rgba(0, 200, 255, 0.35);
-}
-
-#large {
-  width: 140px;
-  display: none;
-}
-
-#small {
-  width: 48px;
-}
-
-/* The sidebar menu */
-
-.sidenav {
-  height: 100%;
-  /* Full-height: remove this if you want "auto" height */
-  position: fixed;
-  /* Fixed Sidebar (stay in place on scroll) */
-  padding-top: 6px;
-  z-index: 1;
-  /* Stay on top */
-  top: 0;
-  /* Stay at the top */
-  left: 0;
-  background-color: rgba(30, 30, 40, 0.9);
-  overflow-x: hidden;
-  /* Disable horizontal scroll */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  text-decoration: none;
-  font-size: 16px;
-  color: #F4F4F4;
-  display: block;
-  vertical-align: center;
-}
-
-/* When you mouse over the navigation links, change their color */
-
-.sidenav a:hover {
-  color: #00C8FF;
-  background-color: rgba(35, 35, 45, 0.5);
-}
-
-.sidenav a,
-.dropdown-btn {
-  padding: 6px 8px 6px 12px;
-  color: #f4f4f4;
-  text-decoration: none;
-  display: block;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
-
-.sidenav span {
-  padding: 6px 8px 6px 12px;
-  font-size: 16px;
-  text-decoration: none;
-  color: #F4F4F4;
-  display: block;
-}
-
-.sidenav span:hover {
-  color: #00c8ff;
-  background-color: rgba(35, 35, 45, 0.5);
-}
-
-.sidenav button {
-  font-size: 16px;
-  font-family: serif;
-  text-decoration: none;
-}
-
-.sidenav button:hover {
-  color: #00c8ff;
-  background-color: rgba(35, 35, 45, 0.5);
-}
-
-.sidenav-bottom {
+.center div {
+  margin: 0;
   position: absolute;
-  display: inline-block;
-  bottom: 6px;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-.dropdown-container {
-  display: none;
-  background-color: rgba(30, 30, 40, 0.7);
+.vertical-menu {
+
 }
 
-#showcase {
-  position: fixed;
-  top: -8px;
-  left: -8px;
-  max-height: 300px;
+.vertical-menu a {
+  display: block;
+  padding: 12px 44px;
+  margin-bottom: 6px;
   text-align: center;
-  border-bottom: #0f0f19 4px solid;
+  text-decoration: none;
+  font-size: 18pt;
+  border-radius: 6px;
+  border: 2px solid #00c8ff; 
+  color: white;
 }
 
-#showcase .about {
-  background: url('../images/backgrounds/about_bg_hd.jpg') no-repeat center top;
+.vertical-menu a:hover {
+  background-color: #00c8ff; /* Add a green color to the "active/current" link */
+  color: navy;
 }
 
-#showcase .blog {
-  background: url('../images/backgrounds/blog_bg_hd.jpg') no-repeat center top;
+.vertical-menu a.active {
+  color: #00c8ff;
 }
 
-#showcase .contact {
-  background: url('../images/backgrounds/contact_bg_hd.jpg') no-repeat center top;
+.vertical-menu a.active:hover {
+  color: navy;
 }
 
-#showcase .gallery {
-  background: url('../images/backgrounds/gallery_bg_hd.jpg') no-repeat center top;
-}
-
-#showcase .home {
-  background: url("../images/backgrounds/index_bg_hd.jpg") no-repeat center top;
-}
-
-#showcase .lets_read {
-  background: url('../images/backgrounds/lets_read_bg_hd.jpg') no-repeat center top;
-}
-
-footer {
+.overlay {
+  height: 100%;
+  width: 0;
   position: fixed;
-  bottom: 0;
-  left: -8px;
-  height: 44px;
-  padding-left: 160px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.0s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
   width: 100%;
-  color: #f4f4f4;
-  background: #23232d;
-  border-top: #0f0f19 4px solid;
   text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #818181;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 48px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
 }

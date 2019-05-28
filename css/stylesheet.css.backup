@@ -1,0 +1,182 @@
+.light {
+  color: #F4F4F4;
+  background-color: rgba(244, 244, 244, 0.7);
+}
+
+.blue {
+  color: #00c8ff;
+  background-color: rgba(0, 200, 255, 0.7);
+}
+
+.background {
+  color: #23232d;
+  background-color: rgba(30, 30, 40, 0.7);
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {
+      padding-top: 15px;
+  }
+  .sidenav a {
+      font-size: 12px;
+  }
+  .sidenav span {
+      font-size: 12px;
+  }
+}
+
+body {
+  background-color: #f4f4f4;
+  height: 100%;
+}
+
+/* Style page content */
+
+.main {
+  margin-left: 48px;
+  /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+.active {
+  background-color: rgba(0, 200, 255, 0.35);
+}
+
+#large {
+  width: 140px;
+  display: none;
+}
+
+#small {
+  width: 48px;
+}
+
+/* The sidebar menu */
+
+.sidenav {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  padding-top: 6px;
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: rgba(30, 30, 40, 0.9);
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
+}
+
+/* The navigation menu links */
+.sidenav a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #F4F4F4;
+  display: block;
+  vertical-align: center;
+}
+
+/* When you mouse over the navigation links, change their color */
+
+.sidenav a:hover {
+  color: #00C8FF;
+  background-color: rgba(35, 35, 45, 0.5);
+}
+
+.sidenav a,
+.dropdown-btn {
+  padding: 6px 8px 6px 12px;
+  color: #f4f4f4;
+  text-decoration: none;
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.sidenav span {
+  padding: 6px 8px 6px 12px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #F4F4F4;
+  display: block;
+}
+
+.sidenav span:hover {
+  color: #00c8ff;
+  background-color: rgba(35, 35, 45, 0.5);
+}
+
+.sidenav button {
+  font-size: 16px;
+  font-family: serif;
+  text-decoration: none;
+}
+
+.sidenav button:hover {
+  color: #00c8ff;
+  background-color: rgba(35, 35, 45, 0.5);
+}
+
+.sidenav-bottom {
+  position: absolute;
+  display: inline-block;
+  bottom: 6px;
+}
+
+.dropdown-container {
+  display: none;
+  background-color: rgba(30, 30, 40, 0.7);
+}
+
+#showcase {
+  position: fixed;
+  top: -8px;
+  left: -8px;
+  max-height: 300px;
+  text-align: center;
+  border-bottom: #0f0f19 4px solid;
+}
+
+#showcase .about {
+  background: url('../images/backgrounds/about_bg_hd.jpg') no-repeat center top;
+}
+
+#showcase .blog {
+  background: url('../images/backgrounds/blog_bg_hd.jpg') no-repeat center top;
+}
+
+#showcase .contact {
+  background: url('../images/backgrounds/contact_bg_hd.jpg') no-repeat center top;
+}
+
+#showcase .gallery {
+  background: url('../images/backgrounds/gallery_bg_hd.jpg') no-repeat center top;
+}
+
+#showcase .home {
+  background: url("../images/backgrounds/index_bg_hd.jpg") no-repeat center top;
+}
+
+#showcase .lets_read {
+  background: url('../images/backgrounds/lets_read_bg_hd.jpg') no-repeat center top;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: -8px;
+  height: 44px;
+  padding-left: 160px;
+  width: 100%;
+  color: #f4f4f4;
+  background: #23232d;
+  border-top: #0f0f19 4px solid;
+  text-align: center;
+}

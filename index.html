@@ -3,73 +3,26 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Rough draft for blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Rough draft for website">
     <meta name="keywords" content="jamison,jamie,lahman,blog,website">
     <meta name="author" content="Jamison Lahman">
     <title>Jamison Lahman | Home</title>
     <link rel="stylesheet" href="./css/stylesheet.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="./images/jme.ico">
   </head>
 
   <body>
-    <header>
-      <div id="large" class="sidenav">
-        <span onclick="closeNav()" title="Close menu"><i class="material-icons">menu</i> Menu</span>
-        <a href="index.html" title="Return home"><i class="active material-icons">home</i> Home</a>
-        <a href="about.html" title="About me"><i class="material-icons">portrait</i> About</a>
-        <a href="personal.html" title="On my mind"><i class="material-icons">description</i> Personal</a>
-        <a href="music.html" title="Music I enjoy"><i class="material-icons">music_note</i> Music</a>
-        <a href="gallery.html" title="See what I see"><i class="material-icons">image</i> Gallery</a>
-        <a href="projects.html" title="Current projects"><i class="material-icons">folder_special</i> Projects</a>
-        <button class="dropdown-btn" title="Contact me">
-          <i class="material-icons">perm_contact_calendar</i> Contacts
-        </button>
-        <div class="dropdown-container">
-          <a href="mailto:lahmanja@protonmail.com" title="Email: lahmanja@protonmail.com"><i class="material-icons">alternate_email</i> Email</a>
-          <a href=""><i class="material-icons">message</i> Riot.im</a>
-          <a title="Phone: 650-550-0490"><i class="material-icons">phone</i> Phone</a>
-        </div>
-        <div id="large" class="sidenav-bottom">
-          <span onclick="toggleFooter()" title="Site info"><i class="material-icons">info</i> Info</span>
-        </div>
+    <div class="center">
+      <div class= "vertical-menu">
+          <a class="active" href="index.html" title="Home is where I made it">Home</a>
+          <a href="editorials.html" title="What's on my mind">Editorials</a>
+          <a href="music.html" title="What I'm listening to">Tunes</a>
+          <a href="gallery.html" title="See what I see">Gallery</a>
+          <a href="projects.html" title="What I'm up to">Projects</a>
+          <a href="contact.html" title="Get ahold of me">Contact</a>
       </div>
-
-
-      <div id="small" class="sidenav">
-        <span onclick="openNav()" title="Open menu"><i class="material-icons">menu</i></span>
-        <a href="index.html" title="Return home"><i class="active material-icons">home</i></a>
-        <a href="about.html" title="About me"><i class="material-icons">portrait</i></a>
-        <a href="personal.html" title="On my mind"><i class="material-icons">description</i></a>
-        <a href="music.html" title="Music I enjoy"><i class="material-icons">music_note</i></a>
-        <a href="gallery.html" title="See what I see"><i class="material-icons">image</i></a>
-        <a href="projects.html" title="Current projects"><i class="material-icons">folder_special</i></a>
-        <button class="dropdown-btn" title="Contact me">
-          <i class="material-icons">perm_contact_calendar</i>
-        </button>
-        <div class="dropdown-container">
-          <a href="mailto:lahmanja@protonmail.com" title="Email: lahmanja@protonmail.com"><i class="material-icons">alternate_email</i></a>
-          <a href=""><i class="material-icons">message</i></a>
-          <a title="Phone: 650-550-0490"><i class="material-icons">phone</i></a>
-        </div>
-        <div class="sidenav-bottom">
-          <span onclick="toggleFooter()" title="Site info"><i class="material-icons">info</i></span>
-        </div>
-      </div>
-    </header>
-
-    <section id="showcase">
-      <img src="https://raw.githubusercontent.com/jmelahman/jmelahman.github.io/master/images/backgrounds/index_bg_hd.jpg">
-    </section>
-
-    <div class="main">
     </div>
-    
-    <footer id="footer">
-      <p>Jamison Lahman, 2018 | This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
-    </footer>
-    <script src="scripts/main.js"></script>
   </body>
 
 </html>
