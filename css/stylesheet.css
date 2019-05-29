@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: black;
-  background-image: radial-gradient(ellipse, navy, black);
+  background-image: radial-gradient(ellipse at 50% 35%, navy, black);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -27,6 +27,7 @@ body {
   border-radius: 6px;
   border: 2px solid #00c8ff;
   color: white;
+  background-color: rgba(0, 0 , 70, .7);
 }
 
 .vertical-menu a:hover {
