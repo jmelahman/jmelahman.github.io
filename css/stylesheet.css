@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   background-color: black;
-  background-image: radial-gradient(ellipse at 50% 35%, navy, black);
+  background-image: radial-gradient(ellipse at 50% 40%, navy, black);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
