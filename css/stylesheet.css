@@ -8,11 +8,76 @@ body {
   background-attachment: fixed;
 }
 
+/* Global */
+.container{
+  width: 98%;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+}
+
+u1{
+  margin: 0;
+}
+
+a:link {
+  color: #f4f4f4;
+}
+
+a:visited {
+  color: #e5f9ff;
+}
+
+a:hover {
+  color: #00c6ff;
+  text-decoration: underline;
+}
+
+/* Header */
+header{
+  font-family: Helvetica, Calibri, sans-serif;
+  background: #23232d;
+  max-height: 50px;
+  border-bottom: #0f0f19 4px solid;
+}
+
+header a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+header l1{
+  float: left;
+  display: inline;
+  padding: 0 10px 0 10px;
+}
+
+header #branding img{
+  float: left;
+  max-height: 50px;
+  padding-bottom: 15px;
+}
+
+header #branding h1{
+  margin: 0;
+}
+
+header nav{
+  float: right;
+  margin-top:17.5px;  /* 0.5(50px-header a{font size})*/
+}
+
+header .highlight, header .current a{
+  color: #00c6ff;
+  font-weight: bold;
+}
+
 .center div {
   margin: 0;
   position: absolute;
-  padding-top: 200px;
-  padding-bottom: 50px;
+  padding-top: 400px;
+  padding-bottom: 160px;
   top: 40%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
@@ -35,6 +100,17 @@ body {
 .vertical-menu a:hover {
   color: #00c8ff;
   text-decoration: underline;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  height: 48px;
+  width: 100%;
+  color: #f4f4f4;
+  background: #23232d;
+  border-top: #0f0f19 4px solid;
+  text-align: center;
 }
 
 @media screen and (max-height: 450px) {
