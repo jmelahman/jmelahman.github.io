@@ -2,7 +2,6 @@ body {
   font-family: Helvetica, Calibri, sans-serif;
   padding: 0;
   margin: 0;
-  background-color: black;
   background-image: radial-gradient(ellipse at 50% 40%, navy, black);
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -10,12 +9,34 @@ body {
 
 /* Global */
 .container {
-  width: 98%;
+  width: 96%;
+  max-width: 800px;
   position: relative;
   margin: auto;
   overflow: hidden;
 }
 
+.solid {
+  background-color: rgba(0, 0, 32, .5);
+  height: 94vh;
+  padding: 15px;
+}
+
+.main {
+  float: left;
+  width: 80%;
+  padding: 0 20px;
+}
+
+.right {
+  float: left;
+  width: 20%;
+  padding 15px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Links */
 a:link {
   color: #f4f4f4;
 }
@@ -40,7 +61,7 @@ header {
 header a {
   float: left;
   padding: 12px;
-  line-height: 25px;
+  line-height: 24px;
   border-radius: 4px;
   text-align: center;
   text-decoration: none;
@@ -49,17 +70,34 @@ header a {
 
 header #branding img{
   float: left;
-  margin-top: -14px;
+  margin-top: -13px;
   max-height: 50px;
-  margin-bottom: -14px;
+  margin-bottom: -13px;
 }
 
-header .right {
+header .header-right {
   float: right;
 }
 
 header .active a {
   color: #00c6ff;
+  font-weight: bold;
+}
+
+h1 {
+  color: #00c6ff;
+  text-shadow: 2px 2px #0f0f19;
+}
+
+h2 {
+  color: #00c6ff;
+  text-shadow: 2px 2px #0f0f19;
+}
+
+p {
+  color: #f4f4f4;
+}
+.bold {
   font-weight: bold;
 }
 
@@ -103,11 +141,13 @@ footer {
   text-align: center;
 }
 
+/* For mobile phone: */
 @media screen and (max-height: 450px) {
-  .overlay a {font-size: 20px}
-  .overlay .closebtn {
   font-size: 40px;
   top: 15px;
   right: 35px;
+
+  .main, .right {
+    width:100%;
   }
 }
