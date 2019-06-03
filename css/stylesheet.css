@@ -115,14 +115,14 @@ p {
 .vertical-menu a {
   display: block;
   padding: 12px 44px;
-  margin-bottom: 6px;
+  margin-bottom: 12px;
   text-align: center;
   text-decoration: none;
   font-size: 18pt;
   border-radius: 6px;
   border: 2px solid #00c8ff;
   color: white;
-  background-color: rgba(0, 0 , 70, .7);
+  background-color: rgba(0, 0 , 64, .7);
 }
 
 .vertical-menu a:hover {
