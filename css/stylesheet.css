@@ -83,7 +83,7 @@ header .header-right {
   float: right;
 }
 
-header .active a {
+header a.active {
   color: #00c6ff;
   font-weight: bold;
 }
