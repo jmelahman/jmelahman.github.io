@@ -1,5 +1,5 @@
 body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: Helvetica, Calibri, sans-serif;
   padding: 0;
   margin: 0;
   background-color: black;
@@ -9,15 +9,11 @@ body {
 }
 
 /* Global */
-.container{
+.container {
   width: 98%;
   position: relative;
   margin: auto;
   overflow: hidden;
-}
-
-u1{
-  margin: 0;
 }
 
 a:link {
@@ -34,41 +30,35 @@ a:hover {
 }
 
 /* Header */
-header{
-  font-family: Helvetica, Calibri, sans-serif;
+header {
   background: #23232d;
-  max-height: 50px;
   border-bottom: #0f0f19 4px solid;
+  overflow: hidden;
+  padding 20px 10px;
 }
 
-header a{
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-header l1{
+header a {
   float: left;
-  display: inline;
-  padding: 0 10px 0 10px;
+  padding: 12px;
+  line-height: 25px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
 }
 
 header #branding img{
   float: left;
+  margin-top: -14px;
   max-height: 50px;
-  padding-bottom: 15px;
+  margin-bottom: -14px;
 }
 
-header #branding h1{
-  margin: 0;
-}
-
-header nav{
+header .right {
   float: right;
-  margin-top:17.5px;  /* 0.5(50px-header a{font size})*/
 }
 
-header .highlight, header .current a{
+header .active a {
   color: #00c6ff;
   font-weight: bold;
 }
