@@ -20,23 +20,24 @@ body {
 }
 
 .solid {
-  overflow: auto;
   background-color: rgba(0, 0, 32, .5);
   height: 94vh;
   padding: 0 12px;
 }
 
 .main {
+  overflow: hidden;
   float: left;
   width: 70%;
-  padding: 0 20px;
+  padding: 0 10px;
 }
 
 .right {
+  overflow: hidden;
   float: left;
   width: 30%;
   text-align: center;
-  padding: 10px;
+  padding: 4px;
 }
 
 /* Links */
