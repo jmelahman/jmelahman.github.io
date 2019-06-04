@@ -35,9 +35,8 @@ body {
 .right {
   float: left;
   width: 30%;
-  padding 15px;
-  margin-top: 6vh;
   text-align: center;
+  padding: 10px;
 }
 
 /* Links */
@@ -93,12 +92,14 @@ h1 {
 }
 
 h2 {
+  padding-top: 4px;
   color: #00c6ff;
 }
 
 p {
   color: #f4f4f4;
 }
+
 .bold {
   font-weight: bold;
 }
