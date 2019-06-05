@@ -85,6 +85,7 @@ header a {
   text-align: center;
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
 }
 
 header #branding img{
@@ -100,7 +101,6 @@ header .header-right {
 
 header a.active {
   color: #00c6ff;
-  font-weight: bold;
 }
 
 h1 {
