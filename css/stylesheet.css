@@ -145,6 +145,10 @@ p {
   text-decoration: underline;
 }
 
+#contact div {
+  padding-bottom: 1em;
+}
+
 footer {
   position: fixed;
   bottom: 0;
