@@ -1,3 +1,7 @@
+html {
+  overflow-y: scroll;
+}
+
 body {
   font-family: Helvetica, Calibri, sans-serif;
   color: #f4f4f4;
@@ -27,14 +31,14 @@ body {
 
 .full {
   overflow: hidden;
-  padding: 4px 10px;
+  padding: 0px 20px;
 }
 
 .main {
   overflow: hidden;
   float: left;
   width: 70%;
-  padding: 4px 10px;
+  padding: 0px 20px;
 }
 
 .right {
@@ -42,7 +46,7 @@ body {
   float: left;
   width: 30%;
   text-align: center;
-  padding: 4px 10px;
+  padding: 4px 20px;
 }
 
 .frames img {
@@ -112,6 +116,7 @@ h2 {
 }
 
 p {
+  text-align: justify;
   text-indent: 2ch;
 }
 
