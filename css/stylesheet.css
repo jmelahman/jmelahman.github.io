@@ -1,5 +1,6 @@
 body {
   font-family: Helvetica, Calibri, sans-serif;
+  color: #f4f4f4;
   padding: 0;
   margin: 0;
   background-image: radial-gradient(ellipse at 50% 40%, navy, black);
@@ -23,6 +24,11 @@ body {
   background-color: rgba(0, 0, 32, .5);
   height: 94vh;
   padding: 0 12px;
+}
+
+.full {
+  overflow: hidden;
+  padding o 10px;
 }
 
 .main {
@@ -98,7 +104,7 @@ h2 {
 }
 
 p {
-  color: #f4f4f4;
+  text-indent: 2em;
 }
 
 .bold {
