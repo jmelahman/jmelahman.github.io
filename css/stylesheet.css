@@ -14,9 +14,8 @@ body {
 }
 
 .container {
-  width: 96%;
-  max-width: 800px;
-  position: relative;
+  max-width: 80ch;
+  padding: 0 2ch;
   margin: auto;
 }
 
@@ -113,7 +112,7 @@ h2 {
 }
 
 p {
-  text-indent: 2em;
+  text-indent: 2ch;
 }
 
 .center div {
@@ -136,12 +135,12 @@ p {
   font-size: 18pt;
   border-radius: 6px;
   border: 2px solid #00c8ff;
-  color: white;
+  color: #f4f4f4;
   background-color: rgba(0, 0 , 64, .5);
 }
 
 .vertical-menu a:hover {
-  color: #00c8ff;
+  color: #00c6ff;
   text-decoration: underline;
 }
 
