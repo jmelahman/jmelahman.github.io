@@ -22,19 +22,19 @@ body {
 .solid {
   background-color: rgba(0, 0, 32, .5);
   height: 94vh;
-  padding: 0 12px;
+  padding: 4px 0px;
 }
 
 .full {
   overflow: hidden;
-  padding: 10px;
+  padding: 4px 10px;
 }
 
 .main {
   overflow: hidden;
   float: left;
   width: 70%;
-  padding: 0 10px;
+  padding: 4px 10px;
 }
 
 .right {
@@ -168,7 +168,7 @@ footer {
 
 @media only screen and (max-width:620px) {
   /* For mobile phones: */
-  .menu, .main, .right {
+  .main, .right {
     width:100%;
   }
 }
