@@ -28,7 +28,7 @@ body {
 
 .full {
   overflow: hidden;
-  padding o 10px;
+  padding: 10px;
 }
 
 .main {
@@ -43,7 +43,16 @@ body {
   float: left;
   width: 30%;
   text-align: center;
-  padding: 4px;
+  padding: 4px 10px;
+}
+
+.frames img {
+  width: 20%;
+  height: auto;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 /* Links */
@@ -105,10 +114,6 @@ h2 {
 
 p {
   text-indent: 2em;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .center div {
