@@ -161,13 +161,6 @@ footer {
 
 /* For mobile phone: */
 @media screen and (max-height: 450px) {
-  font-size: 40px;
-  top: 15px;
-  right: 35px;
-}
-
-@media only screen and (max-width:620px) {
-  /* For mobile phones: */
   .main, .right {
     width:100%;
   }
