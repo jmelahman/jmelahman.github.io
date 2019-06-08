@@ -45,8 +45,13 @@ body {
   padding: 4px 20px;
 }
 
-.frames img {
-  width: 20%;
+.frame {
+  float: left;
+  width: 50%;
+}
+
+.frame img {
+  width: 100%;
   height: auto;
 }
 
@@ -161,8 +166,8 @@ footer {
 
 /* For mobile phone: */
 @media screen and (max-width: 620px) {
-  .main, .right {
-    width:100%;
+  .main, .right, .frame {
+   width:100%;
   }
   font-size = 40px;
   top: 15px;
