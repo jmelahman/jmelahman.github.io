@@ -31,32 +31,42 @@ body {
 }
 
 .main {
-  overflow: hidden;
   float: left;
   width: 70%;
-  padding: 0px 20px;
+  padding: 6px 20px;
 }
 
 .right {
-  overflow: hidden;
   float: left;
   width: 30%;
   text-align: center;
-  padding: 4px 20px;
+  padding: 10px 20px;
+}
+
+.frame-border {
+  border: 2px solid #00c8ff;
+  border-radius: 16px;
 }
 
 .frame {
   float: left;
   width: 50%;
+  padding: 4px 12px;
 }
 
 .frame img {
+  border-radius: 14px 14px 0px 0px;
   width: 100%;
   height: auto;
 }
 
 .bold {
   font-weight: bold;
+}
+
+.caption {
+  font-size: 12px;
+  font-align: justify;
 }
 
 /* Links */
