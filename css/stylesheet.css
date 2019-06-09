@@ -53,7 +53,7 @@ body {
 .frame {
   float: left;
   width: 50%;
-  padding: 4px 12px;
+  padding: 12px;
 }
 
 .frame img {
