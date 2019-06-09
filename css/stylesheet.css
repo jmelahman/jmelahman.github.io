@@ -58,8 +58,10 @@ body {
 
 .frame img {
   border-radius: 14px 14px 0px 0px;
+  border-bottom: #0f0f19 4px solid;
   width: 100%;
   height: auto;
+
 }
 
 .bold {
