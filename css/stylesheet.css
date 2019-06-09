@@ -21,7 +21,7 @@ body {
 
 .solid {
   background-color: rgba(0, 0, 32, .5);
-  height: calc(100vh - 52px);
+  height: calc(100vh + 86px);
   padding: 4px 0px;
 }
 
