@@ -67,15 +67,14 @@ body {
 }
 
 .subtitle {
-  margin: -18px 0px;
+  margin: -18px 0px -8px 0px;
   font-size: 14px;
   padding-bottom: 24px;
 }
 
 .caption {
-  font-size: 16px;
   font-align: justify;
-  margin: 8px;
+  margin: 6px 12px;
 }
 
 /* Links */
@@ -89,14 +88,6 @@ a:visited {
 
 a:hover {
   color: #00c6ff;
-}
-
-a.frame-link {
-  text-decoration: none;
-}
-
-a.frame-link:hover {
-  color: #f4f4f4;
 }
 
 /* Header */
