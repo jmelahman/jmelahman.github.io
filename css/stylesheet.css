@@ -66,6 +66,12 @@ body {
   font-weight: bold;
 }
 
+.subtitle {
+  margin: -18px 0px;
+  font-size: 14px;
+  padding-bottom: 24px;
+}
+
 .caption {
   font-size: 14px;
   font-align: justify;
