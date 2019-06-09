@@ -47,7 +47,7 @@ body {
 .frame-border {
   border: 2px solid #00c6ff;
   border-radius: 16px;
-  background-color: rgba(0, 0 , 32, .2);
+  background-color: rgba(0, 0 , 32, .5);
 }
 
 .frame {
@@ -67,7 +67,7 @@ body {
 }
 
 .caption {
-  font-size: 12px;
+  font-size: 14px;
   font-align: justify;
 }
 
