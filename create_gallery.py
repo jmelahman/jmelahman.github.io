@@ -1,13 +1,12 @@
-import os
+from os import listdir
+from os.path import isfile, join
 
-path  = "/home/lahmanja/git/jmelahman.github.io/images/gallery"
-os.chdir(path)
-files = filter(os.path.isfile, os.listdir(path))
-files = [os.path.join(path, f) for f in files]
-i= len(files)
-for file in files:
+mypath  = "./images/gallery"
+onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+i = len(onlyfiles)
+for file in onlyfiles:
     html =    '        <div id="' + str(i) + '" class="frame">\n' \
-            + '          <div class="frame-border">"\n' \
+            + '          <div class="frame-border">\n' \
             + '            <img src="/images/gallery/' + file + '" alt="TODO(jamison) Add alt"/>\n' \
             + '            <p class="caption">TODO(jamison) Add caption.</p>\n' \
             + '          </div>\n' \
