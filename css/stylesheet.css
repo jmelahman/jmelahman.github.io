@@ -73,8 +73,9 @@ body {
 }
 
 .caption {
-  font-size: 14px;
+  font-size: 16px;
   font-align: justify;
+  margin: 8px;
 }
 
 /* Links */
