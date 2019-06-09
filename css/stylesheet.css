@@ -89,7 +89,14 @@ a:visited {
 
 a:hover {
   color: #00c6ff;
-  text-decoration: underline;
+}
+
+a.frame-link {
+  text-decoration: none;
+}
+
+a.frame-link:hover {
+  color: #f4f4f4;
 }
 
 /* Header */
