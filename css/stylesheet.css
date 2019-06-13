@@ -22,7 +22,7 @@ body {
 .solid {
   background: rgba(0, 0, 32, .5) no-repeat fixed center;
   height: auto;
-  min-height: 100vh;
+  min-height: calc(100vh - 56px);
   padding: 10px 14px;
 }
 
