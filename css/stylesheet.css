@@ -49,6 +49,7 @@ body {
   border: 2px solid #00c6ff;
   border-radius: 16px;
   background-color: rgba(0, 0 , 32, .4);
+  padding-bottom: 4px;
 }
 
 .frame {
