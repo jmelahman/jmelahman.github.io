@@ -185,9 +185,19 @@ hr {
   background-color: rgba(0, 0 , 64, .5);
 }
 
+.reset {
+  clear: both;
+  height: 1px;
+  font-size: 1px;
+}
+
 .pagination {
+  position: relative;
+  width: 100%;
+  clear: both;
   text-align: center;
-  padding: 8px 16px;
+  margin: 20px 0 0 0;
+  padding-bottom: 56px;
 }
 
 .pagination a {
