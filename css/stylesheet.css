@@ -172,7 +172,7 @@ hr {
 
 .vertical-menu a {
   display: block;
-  padding: 12px 44px;
+  padding: 16px 44px 12px 44px;
   margin-bottom: 2vh;
   text-align: center;
   text-decoration: none;
