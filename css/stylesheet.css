@@ -1,3 +1,7 @@
+html {
+  overflow: scroll;
+}
+
 body {
   font-family: 'Helvetica', 'Calibri', sans-serif;
   color: #f4f4f4;
@@ -54,7 +58,7 @@ body {
 
 .frame {
   float: left;
-  width: 50%;
+  width: 100%;
   padding: 12px;
 }
 
@@ -64,6 +68,11 @@ body {
   width: 100%;
   height: auto;
 
+}
+
+.frames-half {
+  float: left;
+  width: 50%;
 }
 
 .bold {
