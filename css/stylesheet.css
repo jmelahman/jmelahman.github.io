@@ -53,7 +53,7 @@ body {
   border: 2px solid #00c6ff;
   border-radius: 16px;
   background-color: rgba(0, 0 , 32, .4);
-  padding-bottom: 4px;
+  padding-bottom: 6px;
 }
 
 .frame {
@@ -179,6 +179,23 @@ hr {
   transform: translate(-50%, -50%);
 }
 
+.border a {
+  border-radius: 6px;
+  border: 2px solid #00c6ff;
+  background-color: rgba(0, 0 , 64, .5);
+}
+
+.pagination {
+  text-align: center;
+  padding: 8px 16px;
+}
+
+.pagination a {
+  text-decoration: none;
+  margin: 2px;
+  padding: 6px 8px 3px 8px;
+}
+
 .vertical-menu a {
   display: block;
   padding: 13px 44px 11px 44px;
@@ -186,10 +203,6 @@ hr {
   text-align: center;
   text-decoration: none;
   font-size: 18pt;
-  border-radius: 6px;
-  border: 2px solid #00c6ff;
-  color: #f4f4f4;
-  background-color: rgba(0, 0 , 64, .5);
 }
 
 .vertical-menu a:hover {
