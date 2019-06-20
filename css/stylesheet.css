@@ -240,12 +240,6 @@ footer {
   .main, .right, .frames-half {
    width:100%;
   }
-  .main {
-    padding: 6px 10px
-  }
-  .right, .frame {
-    padding: 10px;
-  }
   font-size = 40px;
   top: 15px;
   right: 35px;
