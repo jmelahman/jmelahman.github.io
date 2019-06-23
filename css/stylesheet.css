@@ -18,12 +18,13 @@ body {
 }
 
 .container {
-  max-width: 84ch;
-  padding: 0ch 4ch;
+  max-width: 80ch;
   margin: auto;
 }
 
 .solid {
+  /* padding-top should at least be h1 margin-top */
+  padding: 0.67em 4ch 0.67em 4ch;
   background: rgba(0, 0, 32, .5) no-repeat fixed center;
   height: auto;
   min-height: calc(100vh - 56px);
@@ -127,7 +128,6 @@ header #branding img{
 }
 
 header .header-right {
-  margin-right: 10px;
   float: right;
 }
 
@@ -136,6 +136,8 @@ header a.active {
 }
 
 h1 {
+  margin: 0.67em 0em;
+  padding: 0;
   color: #00c6ff;
 }
 
@@ -234,8 +236,8 @@ footer {
 
 /* For mobile phone: */
 @media screen and (max-width: 620px) {
-  .container {
-    padding: 0ch 2ch;
+  .solid {
+    padding: 0.67em 2ch 0.67em 2ch;
   }
   .main, .right, .frames-half {
    width:100%;
