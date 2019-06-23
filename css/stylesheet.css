@@ -42,9 +42,9 @@ body {
 .right {
   float: right;
   width: 30%;
-  min-width: 154px;
+  min-width: 144px;
   text-align: center;
-  padding: 10px 4px 10px 4px;
+  padding: 0.2em 0;
 }
 
 .frame-border {
