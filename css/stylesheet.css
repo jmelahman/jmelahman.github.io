@@ -22,14 +22,13 @@ body {
 }
 
 .container {
-  max-width: 84ch;
+  max-width: 80ch;
   margin: auto;
-  padding: 0 2ch;
 }
 
 .solid {
   /* padding-top should at least be h1 margin-top */
-  padding: 0.67em 6ch 0 6ch;
+  padding: 0.67em 4ch 0 4ch;
   background: rgba(0, 0, 32, .5) no-repeat fixed center;
   height: auto;
   min-height: calc(100vh - 56px);
@@ -45,6 +44,11 @@ body {
   min-width: 144px;
   text-align: center;
   padding: 0.2em 0;
+}
+
+.right a, .right div {
+  display: block;
+  padding: 0.5em 0;
 }
 
 .frame-border {
@@ -88,17 +92,31 @@ body {
   padding: 0px 2px 4px 2px;
 }
 
+.menu-content {
+  display: none;
+}
+
 /* Links */
 a:link {
   color: #f4f4f4;
 }
 
 a:visited {
-  color: #e5f9ff;
+  color: #f4f4f4;
 }
 
 a:hover {
   color: #00c6ff;
+}
+
+h1 a:link {
+  color: #00c6ff;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  color: #f4f4f4;
+  text-decoration: underline;
 }
 
 /* Header */
@@ -131,7 +149,7 @@ header .header-right {
   float: right;
 }
 
-header a.active {
+a.active {
   color: #00c6ff;
 }
 
@@ -139,6 +157,7 @@ h1 {
   margin: 0.67em 0em;
   padding: 0;
   color: #00c6ff;
+  text-decoration: none;
 }
 
 h2 {
@@ -219,10 +238,6 @@ hr {
   text-decoration: underline;
 }
 
-#contact div {
-  padding-bottom: 1em;
-}
-
 footer {
   position: fixed;
   bottom: 0;
@@ -236,14 +251,8 @@ footer {
 
 /* For mobile phone: */
 @media screen and (max-width: 620px) {
-  .container {
-    padding: 0ch 2ch;
-  }
   .solid {
-    padding: 0.67em 4ch 0 4ch;
-  }
-  .right {
-    padding-top: 0.33em;
+    padding: 0.67em 2ch 0 2ch;
   }
   .frames-half {
    width:100%;
