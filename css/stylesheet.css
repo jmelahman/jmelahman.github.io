@@ -8,6 +8,10 @@ body {
   padding: 0;
   margin: 0;
   background-image: radial-gradient(ellipse at 50% 40%, navy, black);
+  background-image: -webkit-radial-gradient(ellipse at 50% 40%, navy, black);
+  background-image: -moz-radial-gradient(ellipse at 50% 40%, navy, black);
+  background-image: -o-radial-gradient(ellipse at 50% 40%, navy, black);
+  background-image: -ms-radial-gradient(ellipse at 50% 40%, navy, black);
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -18,13 +22,14 @@ body {
 }
 
 .container {
-  max-width: 80ch;
+  max-width: 84ch;
   margin: auto;
+  padding: 0 2ch;
 }
 
 .solid {
   /* padding-top should at least be h1 margin-top */
-  padding: 0.67em 4ch 0.67em 4ch;
+  padding: 0.67em 6ch 0 6ch;
   background: rgba(0, 0, 32, .5) no-repeat fixed center;
   height: auto;
   min-height: calc(100vh - 56px);
@@ -34,15 +39,10 @@ body {
   overflow: hidden;
 }
 
-.main {
-  float: left;
-  width: 70%;
-  padding: 0px 4px 0px 0px;
-}
-
 .right {
-  float: left;
+  float: right;
   width: 30%;
+  min-width: 154px;
   text-align: center;
   padding: 10px 4px 10px 4px;
 }
@@ -65,7 +65,6 @@ body {
   border-bottom: #0f0f19 4px solid;
   width: 100%;
   height: auto;
-
 }
 
 .frames-half {
@@ -84,7 +83,7 @@ body {
 }
 
 .caption {
-  font-align: justify;
+  text-align: justify;
   margin: 6px 12px;
   padding: 0px 2px 4px 2px;
 }
@@ -128,6 +127,7 @@ header #branding img{
 }
 
 header .header-right {
+  margin-right: 10px;
   float: right;
 }
 
@@ -236,13 +236,16 @@ footer {
 
 /* For mobile phone: */
 @media screen and (max-width: 620px) {
-  .solid {
-    padding: 0.67em 2ch 0.67em 2ch;
+  .container {
+    padding: 0ch 2ch;
   }
-  .main, .right, .frames-half {
+  .solid {
+    padding: 0.67em 4ch 0 4ch;
+  }
+  .right {
+    padding-top: 0.33em;
+  }
+  .frames-half {
    width:100%;
   }
-  font-size = 40px;
-  top: 15px;
-  right: 35px;
 }
