@@ -47,8 +47,11 @@ body {
 }
 
 .right a, .right div {
-  display: block;
   padding: 0.5em 0;
+}
+
+.menu-content a {
+  display: block;
 }
 
 .frame-border {
@@ -66,7 +69,7 @@ body {
 
 .frame img {
   border-radius: 14px 14px 0px 0px;
-  border-bottom: #0f0f19 4px solid;
+  border-bottom: #0ff0f19 4px solid;
   width: 100%;
   height: auto;
 }
@@ -90,10 +93,6 @@ body {
   text-align: justify;
   margin: 6px 12px;
   padding: 0px 2px 4px 2px;
-}
-
-.menu-content {
-  display: none;
 }
 
 /* Links */
