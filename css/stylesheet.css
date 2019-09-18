@@ -185,7 +185,7 @@ hr {
   border-color: #00c6ff;
 }
 
-.center div {
+.center div, .center nav {
   margin: 0;
   position: absolute;
   padding-top: 400px;
