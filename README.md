@@ -47,7 +47,6 @@ nosetests test_index.py --with-save-baseline
 Subsequent runs,
 
 ```
-
 nosetests test_index.py
 ```
 
