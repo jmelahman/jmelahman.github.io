@@ -1,4 +1,5 @@
-# website
+# Website
+
 Personal website
 
 ## Tooling
@@ -25,7 +26,7 @@ Ensure that the testing software is somewhere in `PATH`,
 echo 'PATH="$PATH:$HOME/.local/bin"' >> /etc/environment
 ```
 
-Download the necessary driver from [https://github.com/mozilla/geckodriver/releases](here).
+Download the necessary driver from (https://github.com/mozilla/geckodriver/releases)[here].
 
 Unzip and move to a proper directory,
 
@@ -34,6 +35,22 @@ cd ~/Downloads
 tar -zxvf geckodriver-*.tar.gz
 mv geckodriver $HOME/.local/bin
 ```
+
+### Running Tests
+
+Running the tests for the first time,
+
+```
+nosetests test_index.py --with-save-baseline
+```
+
+Subsequent runs,
+
+```
+
+nosetests test_index.py
+```
+
 
 ### Troubleshooting
 
@@ -51,7 +68,6 @@ OR
 
 ```
 FileNotFoundError: [Errno 2] No such file or directory: 'geckodriver': 'geckodriver'
-
 ```
 
-Download the necessary driver and move to somewhere in `PATH`
+Download the necessary driver and move to somewhere in `PATH`.

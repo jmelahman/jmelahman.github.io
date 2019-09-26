@@ -14,11 +14,12 @@ class BaseNeedleTest(NeedleTestCase):
 
     def setUp(self):
         klass = import_from_string('needle.engines.pil_engine.Engine')
-        self._engine = klass()
-        self._driver = NeedleFirefox()
+        self.engine = klass()
+        self.driver = NeedleFirefox()
         self._base_url = "https://jmelahman.github.io/index.html"
 
 
     def tearDown(self):
         if self.driver:
             self.driver.quit()
+
