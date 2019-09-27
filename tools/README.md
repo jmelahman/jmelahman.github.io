@@ -21,6 +21,15 @@ Ensure that the testing software is somewhere in `PATH`,
 ```shell
 echo 'PATH="$PATH:$HOME/.local/bin"' >> /etc/environment
 ```
+*Note: `/etc/environment` consists of one assignment expressions per line.
+If `PATH` is already defined, you'll need to append to the existing expression rather than to the file.*
+
+
+Update the current shell environment with new `PATH`,
+
+```shell
+source /etc/environment
+```
 
 Download the necessary driver from (https://github.com/mozilla/geckodriver/releases)[here].
 
@@ -40,7 +49,7 @@ Running the tests for the first time,
 nosetests test_index.py --with-save-baseline
 ```
 
-Subsequent runs,
+  Subsequent runs,
 
 ```
 nosetests test_index.py
