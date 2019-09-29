@@ -13,7 +13,6 @@ def main():
         chapter = str(sys.argv[1])
         exercise = str(sys.argv[2])
     except:
-        print('Chapter and exercise are required inputs')
         pass
     my_path = '../../python-for-everybody-solutions/'
     only_files = [f for f in listdir(my_path) if isfile(join(my_path, f))]
@@ -21,12 +20,9 @@ def main():
     for filename in sorted(only_files):
         if not filename.endswith('.py'):
             continue
-        if exercise:
-            if 'exercise' + chapter + '_' + exercise not in filename:
-                continue
-        else:
-            if 'exercise' + chapter not in filename:
-                continue
+        if ((exercise and 'exercise' + chapter + '_' + exercise not in filename) or
+                'exercise' + chapter not in filename):
+            continue
         fhand = open(my_path + filename, "r")
         print(code_to_html(fhand.read()))
 
