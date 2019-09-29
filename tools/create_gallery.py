@@ -19,7 +19,7 @@ sorted_files = sorted(files_dict.items(), key=operator.itemgetter(1), reverse=Tr
 i = len(sorted_files)
 for key, file in enumerate(sorted_files):
     html = '        <div id="' + str(i) + '" class="frame">\n' \
-         + '          <div class="frame-border">\n' \
+         + '          <div class="outline-16px">\n' \
          + '            <a href="/gallery#' + str(i) + '">\n' \
          + '              <img src="/images/gallery/' + file[0] + '" alt="TODO(jamison) Add alt"/>\n' \
          + '            </a>\n' \
