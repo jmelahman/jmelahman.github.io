@@ -134,7 +134,7 @@ p.no-indent {
 
 pre {
  white-space: pre;
- margin: 1em -3em;
+ margin: 1em 0em;
 }
 
 iframe {
