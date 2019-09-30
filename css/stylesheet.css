@@ -8,7 +8,7 @@ body {
   color: #f4f4f4;
   padding: 0;
   margin: 0;
-  background-image: radial-gradient(ellipse at 50% 40%, #008, #000);
+  background-image: radial-gradient(ellipse at 50% 40%, #006, #000);
   background-image: -webkit-radial-gradient(ellipse at 50% 40%, #008, #000);
   background-image: -moz-radial-gradient(ellipse at 50% 40%, #008, #000);
   background-image: -o-radial-gradient(ellipse at 50% 40%, #008, #000);
@@ -184,7 +184,7 @@ footer {
 }
 
 .vignette {
-  background: rgba(0, 0, 0, .55) no-repeat fixed center;
+  background: rgba(0, 0, 0, .40) no-repeat fixed center;
 }
 
 .full {
