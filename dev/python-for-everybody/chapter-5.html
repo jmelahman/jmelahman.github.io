@@ -30,6 +30,7 @@
     </nav>
   </header>
   <main class="container vignette">
+    <h1>Python for Everybody</h1>
     <nav class="horizontal-menu">
       <a class="anchor-button primary-border" href="./dev/python-for-everybody/chapter-3.html">Chapter 3</a>
       <a class="anchor-button primary-border" href="./dev/python-for-everybody/chapter-4.html">Chapter 4</a>
@@ -43,12 +44,12 @@
       <a class="anchor-button primary-border" href="./dev/python-for-everybody/chapter-12.html">Chapter 12</a>
       <a class="anchor-button primary-border" href="./dev/python-for-everybody/chapter-13.html">Chapter 13</a>
     </nav>
-    <h1 id="chapter5">Chapter n</h1>
+    <h2 id="chapter5">Chapter 5</h2>
     <nav class="horizontal-menu">
-      <a class="anchor-button primary-border" href="./dev/python-for-everybody/chapter-n.html#exercise5-1">Exercise 5.1</a>
-      <a class="anchor-button primary-border" href="./dev/python-for-everybody/chapter-n.html#exercise5-2">Exercise 5.2</a>
+      <a class="anchor-button primary-border" href="./dev/python-for-everybody/chapter-5.html#exercise5-1">Exercise 5.1</a>
+      <a class="anchor-button primary-border" href="./dev/python-for-everybody/chapter-5.html#exercise5-2">Exercise 5.2</a>
     </nav>
-    <h2 id="exercise5-1">Exercise 5.1</h2>
+    <h3 id="exercise5-1">Exercise 5.1</h3>
     <pre>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">Exercise 5.1: Write a program which repeatedly reads numbers until the user</span>
@@ -108,44 +109,45 @@
 <span class="nb">print</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span> <span class="n">average</span><span class="p">)</span>
     </pre>
     <hr>
-    <h2 id="exercise5-2">Exercise 5.2</h2>
+    <h3 id="exercise5-2">Exercise 5.2</h3>
     <pre>
-  <span class="sd">&quot;&quot;&quot;</span>
-  <span class="sd">Exercise 5.1: Write another program that prompts for a list of numbers as</span>
-  <span class="sd">above and at the end prints out both the maximum and minimum of the numbers</span>
-  <span class="sd">instead of the average.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Exercise 5.2: Write another program that prompts for a list of numbers as</span>
+<span class="sd">above and at the end prints out both the maximum and minimum of the numbers</span>
+<span class="sd">instead of the average.</span>
 
-  <span class="sd">Python for Everybody: Exploring Data Using Python 3</span>
-  <span class="sd">by Charles R. Severance</span>
+<span class="sd">Python for Everybody: Exploring Data Using Python 3</span>
+<span class="sd">by Charles R. Severance</span>
 
-  <span class="sd">Solution by Jamison Lahman, May 28, 2017</span>
-  <span class="sd">&quot;&quot;&quot;</span>
-  <span class="kn">from</span> <span class="nn">exercise5_1</span> <span class="k">import</span> <span class="n">check_for_float</span>
+<span class="sd">Solution by Jamison Lahman, May 28, 2017</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">exercise5_1</span> <span class="k">import</span> <span class="n">check_for_float</span>
 
-  <span class="c1"># Handles the special case for the first input</span>
-  <span class="n">input1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">input1</span> <span class="o">==</span> <span class="s1">&#39;done&#39;</span><span class="p">:</span>
-      <span class="n">quit</span><span class="p">()</span>                                <span class="c1"># Exits if no input</span>
+<span class="c1"># Handles the special case for the first input</span>
+<span class="n">input1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">input1</span> <span class="o">==</span> <span class="s1">&#39;done&#39;</span><span class="p">:</span>
+    <span class="n">quit</span><span class="p">()</span>                                <span class="c1"># Exits if no input</span>
 
-  <span class="n">number</span> <span class="o">=</span> <span class="n">check_for_float</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span>          <span class="c1"># Ensure input is a float</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">check_for_float</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span>          <span class="c1"># Ensure input is a float</span>
 
-  <span class="n">smallest</span> <span class="o">=</span> <span class="n">number</span>
-  <span class="n">largest</span> <span class="o">=</span> <span class="n">number</span>
+<span class="n">smallest</span> <span class="o">=</span> <span class="n">number</span>
+<span class="n">largest</span> <span class="o">=</span> <span class="n">number</span>
 
-  <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                               <span class="c1"># Stays in loop until break</span>
-      <span class="n">input1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">)</span>
-      <span class="k">if</span> <span class="n">input1</span> <span class="o">==</span> <span class="s1">&#39;done&#39;</span><span class="p">:</span>
-          <span class="k">break</span>                             <span class="c1"># Exits loop</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>                               <span class="c1"># Stays in loop until break</span>
+    <span class="n">input1</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter a number: &#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">input1</span> <span class="o">==</span> <span class="s1">&#39;done&#39;</span><span class="p">:</span>
+        <span class="k">break</span>                             <span class="c1"># Exits loop</span>
 
-      <span class="n">number</span> <span class="o">=</span> <span class="n">check_for_float</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span>      <span class="c1"># Ensure input is a float</span>
+    <span class="n">number</span> <span class="o">=</span> <span class="n">check_for_float</span><span class="p">(</span><span class="n">input1</span><span class="p">)</span>      <span class="c1"># Ensure input is a float</span>
 
-      <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">:</span>                  <span class="c1"># Condition for maximum</span>
-          <span class="n">largest</span> <span class="o">=</span> <span class="n">number</span>
-      <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="n">smallest</span><span class="p">:</span>                 <span class="c1"># Condition for minimum</span>
-          <span class="n">smallest</span> <span class="o">=</span> <span class="n">number</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="n">largest</span><span class="p">:</span>                  <span class="c1"># Condition for maximum</span>
+        <span class="n">largest</span> <span class="o">=</span> <span class="n">number</span>
+    <span class="k">if</span> <span class="n">number</span> <span class="o">&lt;</span> <span class="n">smallest</span><span class="p">:</span>                 <span class="c1"># Condition for minimum</span>
+        <span class="n">smallest</span> <span class="o">=</span> <span class="n">number</span>
 
-  <span class="nb">print</span><span class="p">(</span><span class="n">largest</span><span class="p">,</span> <span class="n">smallest</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">largest</span><span class="p">,</span> <span class="n">smallest</span><span class="p">)</span>
     </pre>
+    <hr>
   </main>
 </body>
 </html>
