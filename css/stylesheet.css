@@ -1,3 +1,8 @@
+/* Global */
+* {
+  box-sizing: border-box;
+}
+
 /* Tags */
 html {
   overflow-y: scroll;
@@ -137,6 +142,29 @@ pre {
  margin: 1em 0em;
 }
 
+table.resume-coursework-table {
+  float: right;
+  /* TODO: Hack */
+  margin-top: -36px;
+}
+
+table.resume-coursework-table td {
+  width: 130px;
+}
+
+td {
+  vertical-align: top;
+}
+
+td.resume-date-cell {
+  text-align: right;
+  min-width: 90px;
+}
+
+td.resume-description-cell {
+  width: 100%;
+}
+
 iframe {
   width: 100%;
   height: 400px;
@@ -162,11 +190,6 @@ footer {
   background: #23232d;
   border-top: #0f0f19 4px solid;
   text-align: center;
-}
-
-/* Global */
-* {
-  box-sizing: border-box;
 }
 
 /* Classes */
@@ -256,6 +279,10 @@ a.primary-border:focus {
 .frames-half {
   float: left;
   width: 50%;
+}
+
+span.resume-subheading {
+  font-size: 14px;
 }
 
 .resume-subheading {

@@ -26,7 +26,7 @@ def main():
         fhand = open(my_path + filename, "r")
         print(code_to_html(fhand.read()))
 
-def code_to_html(code, lexer = 'python3', linenos = False):
+def code_to_html(code, lexer = 'python3', linenos = True):
     formatter = HtmlFormatter(linenos=linenos,
                               noclasses=False,
                               cssclass='')
