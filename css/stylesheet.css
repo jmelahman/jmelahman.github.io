@@ -328,10 +328,10 @@ span.resume-subheading {
   margin: 20px 0 0 0;
   padding-bottom: 56px;
 }
-
 .pagination a {
   text-decoration: none;
   margin: 2px;
+  /* TODO: Fix like vertical-menu anchors */
   padding: 8px 10px 5px 10px;
 }
 
@@ -353,6 +353,7 @@ span.resume-subheading {
 .breadcrumb-link {
   color: black;
 }
+
 .vertical-menu .primary-border {
   display: block;
   padding: 14px 24px;
