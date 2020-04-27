@@ -305,12 +305,10 @@ span.resume-subheading {
   padding: 0px 2px 4px 2px;
 }
 
-.center div, .center nav {
+.vertical-menu {
   margin: 0;
   position: absolute;
-  padding-top: 400px;
-  padding-bottom: 160px;
-  top: 40%;
+  top: 45%;
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -337,9 +335,29 @@ span.resume-subheading {
   padding: 8px 10px 5px 10px;
 }
 
-.vertical-menu a {
+.breadcrumb-container {
+  position: relative;
+  padding: 12px;
+  text-align: left;
+}
+.breadcrumb-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.breadcrumb-item {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb-link {
+  color: black;
+}
+.vertical-menu .primary-border {
   display: block;
-  padding: 14px 44px 10px 44px;
+  padding: 14px 24px;
+  height: 56px;
+  min-width: 160px;
   margin: 2vh 0px;
   font-size: 18pt;
   text-align: center;
