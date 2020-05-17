@@ -266,9 +266,13 @@ a.primary-border:focus {
   padding: 14px;
 }
 
+.frame a + .caption-wrapper {
+  border-top: white 4px solid;
+  padding: 0px 2px 4px;
+}
+
 .frame img {
   border-radius: 14px 14px 6px 6px;
-  border-bottom: #0f0f19 4px solid;
   width: 100%;
   height: auto;
 }
@@ -296,7 +300,6 @@ span.resume-subheading {
 .caption {
   text-align: justify;
   margin: 6px 12px;
-  padding: 0px 2px 4px 2px;
 }
 
 .center div, .center nav {
