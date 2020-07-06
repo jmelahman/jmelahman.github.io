@@ -141,6 +141,10 @@ pre {
  margin: 1em 0em;
 }
 
+table {
+  margin: 1em 0px;
+}
+
 table.resume-coursework-table {
   float: right;
 }
@@ -197,10 +201,6 @@ footer {
 
 .inline {
   display: inline-block;
-}
-
-.bold {
-  font-weight: bold;
 }
 
 .indent-padding {
