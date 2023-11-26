@@ -95,6 +95,12 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+a[disabled] {
+  pointer-events: none;
+  color: #bbbbbb;
+  border-color: #bbbbbb;
+}
+
 a.active {
   color: #00c6ff;
 }
