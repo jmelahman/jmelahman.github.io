@@ -27,21 +27,23 @@ imageUpload.addEventListener('change', async (event) => {
 
       // Arbitrary 20px offset
       const topOfBoundingBox = landmarks.getRefPointsForAlignment()[2].y - 20;
+      const leftOfBoundingBox = landmarks.getRefPointsForAlignment()[0].x;
+      const rightOfBoundingBox = landmarks.getRefPointsForAlignment()[1].x;
 
       const leftEyeBrow = landmarks.getLeftEyeBrow();
       const rightEyeBrow = landmarks.getRightEyeBrow();
 
       const averageEyeBrowHeight = (leftEyeBrow[0].y + rightEyeBrow[0].y) / 2;
-      const center = (leftEyeBrow[0].x + rightEyeBrow[0].x) / 2;
+      const center = (leftOfBoundingBox + rightOfBoundingBox) / 2;
 
       const foreheadOffset = topOfBoundingBox - averageEyeBrowHeight;
 
       const foreheadTop = [
-        { x: rightEyeBrow[0].x + 10, y: averageEyeBrowHeight - foreheadOffset + 20 },
-        { x: rightEyeBrow[0].x, y: averageEyeBrowHeight - foreheadOffset + 10 },
+        { x: rightEyeBrow[3].x, y: averageEyeBrowHeight - foreheadOffset + 25 },
+        { x: rightEyeBrow[2].x, y: averageEyeBrowHeight - foreheadOffset + 10 },
         { x: center, y: averageEyeBrowHeight - foreheadOffset },
-        { x: leftEyeBrow[0].x, y: averageEyeBrowHeight - foreheadOffset + 10 },
-        { x: leftEyeBrow[0].x - 10, y: averageEyeBrowHeight - foreheadOffset + 20 },
+        { x: leftEyeBrow[3].x, y: averageEyeBrowHeight - foreheadOffset + 10 },
+        { x: leftEyeBrow[2].x, y: averageEyeBrowHeight - foreheadOffset + 25 },
       ];
 
       const faceOutline = [
