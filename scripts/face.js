@@ -25,7 +25,6 @@ imageUpload.addEventListener('change', async (event) => {
     detections.forEach(detection => {
       const { landmarks, box } = detection;
 
-      // Arbitrary 20px offset
       const leftOfBoundingBox = landmarks.getRefPointsForAlignment()[0].x;
       const rightOfBoundingBox = landmarks.getRefPointsForAlignment()[1].x;
       const topOfBoundingBox = landmarks.getRefPointsForAlignment()[2].y;
