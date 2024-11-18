@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face Outline Detection</title>
+  <script defer src="face-api.js"></script>
+  <script defer src="script.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+    }
+    canvas {
+      margin-top: 20px;
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <input type="file" id="imageUpload" accept="image/*">
+  <canvas id="canvas"></canvas>
+
+</body>
+</html>
