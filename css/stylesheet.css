@@ -202,6 +202,7 @@ footer {
 /* Classes */
 .container {
   max-width: 80ch;
+  min-height: inherit;
   margin: auto;
 }
 
@@ -214,7 +215,7 @@ footer {
 }
 
 .vignette {
-  background: rgba(0, 0, 0, .40) no-repeat fixed center;
+  /* background: rgba(0, 0, 0, .40) no-repeat fixed center; */
   overflow: auto;
 }
 
