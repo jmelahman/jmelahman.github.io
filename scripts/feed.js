@@ -1,4 +1,4 @@
-const feeds = [
+const FEEDS = [
   { title: "Thorsten Ball", url: "https://registerspill.thorstenball.com/feed" },
   { title: "Uros Popovic", url: "https://popovicu.com/rss.xml" },
   { title: "Kyla Scanlon", url: "https://kyla.substack.com/feed" },
@@ -8,140 +8,155 @@ const feeds = [
   { title: "Matt Bruenig", url: "https://mattbruenig.com/feed" },
 ];
 
-const proxy = 'https://corsproxy.io/?';
-const CACHE_DURATION = 30 * 60 * 1000; // 30 minutes in milliseconds
+const PROXY = 'https://corsproxy.io/?';
+const CACHE_TTL_MS = 30 * 60 * 1000;
+const MAX_ITEMS = 50;
+const DB_NAME = 'FeedCache';
+const STORE = 'feeds';
 
-// Initialize IndexedDB
-function initDB() {
-  return new Promise((resolve, reject) => {
-    const request = indexedDB.open('FeedCache', 1);
-
-    request.onerror = () => reject(request.error);
-    request.onsuccess = () => resolve(request.result);
-
-    request.onupgradeneeded = (event) => {
-      const db = event.target.result;
-      const objectStore = db.createObjectStore('feeds', { keyPath: 'url' });
-      objectStore.createIndex('timestamp', 'timestamp', { unique: false });
-    };
-  });
-}
-
-// Save feed data to IndexedDB
-async function saveFeedToCache(url, data) {
-  const db = await initDB();
-  return new Promise((resolve, reject) => {
-    const transaction = db.transaction(['feeds'], 'readwrite');
-    const objectStore = transaction.objectStore('feeds');
-    const request = objectStore.put({
-      url: url,
-      data: data,
-      timestamp: Date.now()
+let dbPromise;
+function getDB() {
+  if (!dbPromise) {
+    dbPromise = new Promise((resolve, reject) => {
+      const req = indexedDB.open(DB_NAME, 1);
+      req.onupgradeneeded = () => req.result.createObjectStore(STORE, { keyPath: 'url' });
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
     });
+  }
+  return dbPromise;
+}
 
-    request.onsuccess = () => resolve();
-    request.onerror = () => reject(request.error);
+async function readCache(url) {
+  const db = await getDB();
+  return new Promise((resolve, reject) => {
+    const req = db.transaction(STORE, 'readonly').objectStore(STORE).get(url);
+    req.onsuccess = () => {
+      const entry = req.result;
+      resolve(entry && Date.now() - entry.timestamp < CACHE_TTL_MS ? entry.data : null);
+    };
+    req.onerror = () => reject(req.error);
   });
 }
 
-// Load feed data from IndexedDB
-async function loadFeedFromCache(url) {
-  const db = await initDB();
+async function writeCache(url, data) {
+  const db = await getDB();
   return new Promise((resolve, reject) => {
-    const transaction = db.transaction(['feeds'], 'readonly');
-    const objectStore = transaction.objectStore('feeds');
-    const request = objectStore.get(url);
-
-    request.onsuccess = () => {
-      const result = request.result;
-      if (result && (Date.now() - result.timestamp) < CACHE_DURATION) {
-        resolve(result.data);
-      } else {
-        resolve(null);
-      }
-    };
-    request.onerror = () => reject(request.error);
+    const req = db.transaction(STORE, 'readwrite').objectStore(STORE)
+      .put({ url, data, timestamp: Date.now() });
+    req.onsuccess = () => resolve();
+    req.onerror = () => reject(req.error);
   });
+}
+
+function parseXML(xml) {
+  const doc = new DOMParser().parseFromString(xml, 'application/xml');
+  if (doc.querySelector('parsererror')) throw new Error('invalid XML');
+  return doc;
 }
 
 async function fetchFeed(url) {
-  // Try to load from cache first
-  const cachedData = await loadFeedFromCache(url);
-  if (cachedData) {
-    const parser = new DOMParser();
-    return parser.parseFromString(cachedData, "application/xml");
+  const cached = await readCache(url);
+  if (cached) {
+    try { return parseXML(cached); } catch { /* refetch on bad cache */ }
   }
-
-  // If not in cache or expired, fetch from network
-  const res = await fetch(proxy + encodeURIComponent(url));
+  const res = await fetch(PROXY + encodeURIComponent(url));
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const xml = await res.text();
-
-  // Save to cache
-  await saveFeedToCache(url, xml);
-
-  const parser = new DOMParser();
-  return parser.parseFromString(xml, "application/xml");
+  const doc = parseXML(xml);
+  await writeCache(url, xml);
+  return doc;
 }
 
-function parseItems(feed, items) {
-  return [...items.querySelectorAll("item, entry")].map(item => ({
-    title: item.querySelector("title")?.textContent,
-    feed: feed.title,
-    date: new Date(item.querySelector("published")?.textContent || item.querySelector("pubDate")?.textContent || 0),
-    link: item.querySelector("link")?.getAttribute("href") || item.querySelector("link")?.textContent,
-  }));
+// Atom entries may contain multiple <link> elements; prefer rel="alternate"
+// or one without a rel. RSS <link> carries the URL as text content.
+function extractLink(entry) {
+  const links = [...entry.querySelectorAll('link')];
+  const alt = links.find(l => {
+    const rel = l.getAttribute('rel');
+    return !rel || rel === 'alternate';
+  }) ?? links[0];
+  return alt?.getAttribute('href') || alt?.textContent?.trim() || '#';
+}
+
+function parseItems(feed, doc) {
+  return [...doc.querySelectorAll('item, entry')].map(entry => {
+    const dateStr = entry.querySelector('published, pubDate, updated')?.textContent;
+    return {
+      title: entry.querySelector('title')?.textContent?.trim() || '(untitled)',
+      feed: feed.title,
+      date: dateStr ? new Date(dateStr) : null,
+      link: extractLink(entry),
+    };
+  });
 }
 
 async function loadFeed(feed) {
   try {
-    const doc = await fetchFeed(feed.url);
-    return parseItems(feed, doc)
+    return parseItems(feed, await fetchFeed(feed.url));
   } catch (err) {
-    console.error(`Failed to load ${feed.url}: ${err}`);
+    console.error(`Failed to load ${feed.url}:`, err);
+    return [];
   }
 }
 
-function toMMDDYYYY(date) {
+function formatDate(d) {
   return [
-    String(date.getMonth() + 1).padStart(2, '0'),
-    String(date.getDate()).padStart(2, '0'),
-    date.getFullYear()
+    String(d.getMonth() + 1).padStart(2, '0'),
+    String(d.getDate()).padStart(2, '0'),
+    d.getFullYear(),
   ].join('/');
 }
 
-function transformItems(items) {
-  const list = items.map(item => {
-    return `<tr>
-      <td class="date-col">${toMMDDYYYY(item.date)}</td>
-      <td><a href="${item.link}" target="_blank">${item.title}</a></td>
-      <td><span style="white-space: nowrap">${item.feed}</span></td>
-    </tr>`;
-  }).join("");
-  return `<table>
-                <colgroup>
-                  <col>
-                  <col>
-                  <col>
-                </colgroup>
-                <tr>
-                  <th class="date-col">Date</th>
-                  <th>Title</th>
-                  <th>Feed</th>
-                </tr>
-                  ${list}
-                </table>`;
+function buildRow(item) {
+  const tr = document.createElement('tr');
+
+  const dateCell = document.createElement('td');
+  dateCell.className = 'date-col';
+  dateCell.textContent = formatDate(item.date);
+  tr.append(dateCell);
+
+  const titleCell = document.createElement('td');
+  const link = document.createElement('a');
+  link.href = item.link;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.textContent = item.title;
+  titleCell.append(link);
+  tr.append(titleCell);
+
+  const feedCell = document.createElement('td');
+  feedCell.style.whiteSpace = 'nowrap';
+  feedCell.textContent = item.feed;
+  tr.append(feedCell);
+
+  return tr;
 }
 
-async function render(promiseItems) {
-  const content = document.getElementById("content");
-  const allItems = await promiseItems;
-  const sortedItems = allItems.flat().sort((a, b) => b.date - a.date).slice(0, 50);
-  content.innerHTML = transformItems(sortedItems);
+function buildTable(items) {
+  const table = document.createElement('table');
+  table.innerHTML = `
+    <colgroup><col><col><col></colgroup>
+    <tr><th class="date-col">Date</th><th>Title</th><th>Feed</th></tr>
+  `;
+  for (const item of items) table.append(buildRow(item));
+  return table;
 }
 
-// Lazy fetch the feeds.
-const promiseItems = Promise.all(feeds.map(loadFeed));
+// Kick off fetches before DOMContentLoaded so they overlap HTML parsing.
+const itemsPromise = Promise.all(FEEDS.map(loadFeed));
 
-document.addEventListener('DOMContentLoaded', () => {
-  render(promiseItems);
-});
+async function render() {
+  const lists = await itemsPromise;
+  const items = lists.flat()
+    .filter(it => it.date && !isNaN(it.date))
+    .sort((a, b) => b.date - a.date)
+    .slice(0, MAX_ITEMS);
+  document.getElementById('content').replaceChildren(buildTable(items));
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', render);
+} else {
+  render();
+}
