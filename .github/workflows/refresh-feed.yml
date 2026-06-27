@@ -1,0 +1,49 @@
+name: Refresh feed
+
+on:
+  schedule:
+    - cron: "17 */4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-feed
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Ensure pandoc is installed
+        run: |
+          if ! command -v pandoc >/dev/null; then
+            sudo apt-get update
+            sudo apt-get install -y pandoc
+          fi
+          pandoc --version | head -1
+
+      - name: Render feed page
+        run: |
+          python3 scripts/build-feed.py | pandoc \
+            -o feed/index.html \
+            --template=template.html \
+            --from markdown+raw_html \
+            --variable=header=true \
+            --variable=title-prefix=Feed \
+            --variable=nav_feed=true
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- feed/index.html; then
+            echo "feed/index.html unchanged; nothing to commit"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add feed/index.html
+          git commit -m "chore(feed): refresh aggregated feed [skip ci]"
+          git push
