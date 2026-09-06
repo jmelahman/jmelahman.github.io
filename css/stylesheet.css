@@ -412,3 +412,38 @@ hr {
 .nb {
   white-space: nowrap;
 }
+
+.terminal.dark {
+  background-color: #1c1c1c;
+  border-color: #1c1c1c;
+}
+
+.terminal.dark .terminal-bar {
+  border-bottom-color: #3a3a3a;
+  color: #9a9a9a;
+}
+
+.terminal.dark .terminal-bar i {
+  background-color: #4a4a4a;
+}
+
+.conn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 78%;
+}
+
+.conn span {
+  display: block;
+  padding: 0.75em 1em;
+  text-align: center;
+  color: #1c1c1c;
+}
+
+.conn-green { background-color: #2fd12f; }
+.conn-yellow { background-color: #f4f42c; }
+.conn-purple { background-color: #c73bb0; }
+.conn-blue { background-color: #3a96ec; }

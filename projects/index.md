@@ -68,6 +68,41 @@ the full results are published as JSON.
 
 <article class="project">
 <div class="project-head">
+<h2 id="local-preview"><a href="https://github.com/jmelahman/local-preview">local-preview</a></h2>
+<div class="chips"><span class="chip">Go</span><span class="chip">Docker</span><span class="chip">GPL-3.0</span></div>
+</div>
+
+A local-first preview-deployment orchestrator.
+
+Every commit of a registered git repository becomes a servable preview at its own
+subdomain, built once, deduplicated by content, and served from a single binary.
+Commits that don't touch the frontend or backend reuse the existing artifact and the
+already-running backend process.
+Backend state follows git lineage: a new backend version forks its data from the nearest
+deployed ancestor, so previews feel continuous along a branch while divergent branches can
+never corrupt each other.
+
+<div class="terminal">
+<div class="terminal-bar"><i></i><i></i><i></i><span>local-preview</span></div>
+<pre><code><span class="muted">$</span> preview serve
+<span class="muted">$</span> preview deploy
+<span class="grade">●</span> 3f2a9c1-app.preview.localhost:8080   <span class="muted">build frontend · build backend</span>
+<span class="muted">│</span>
+<span class="grade">●</span> 8b71e04-app.preview.localhost:8080   <span class="muted">reuse frontend · fork backend from 3f2a9c1</span>
+<span class="muted">│</span>
+<span class="grade">●</span> c04d5ee-app.preview.localhost:8080   <span class="muted">reuse frontend · reuse backend</span></code></pre>
+</div>
+
+<ul class="project-links">
+<li><a href="https://jmelahman.github.io/local-preview/"><i class="fas fa-book"></i>Docs</a></li>
+<li><a href="https://github.com/jmelahman/local-preview"><i class="fab fa-github"></i>Source</a></li>
+<li><a href="https://pypi.org/project/local-preview/"><i class="fab fa-python"></i>PyPI</a></li>
+<li><a href="https://pkg.go.dev/github.com/jmelahman/local-preview"><i class="fab fa-golang"></i>Go</a></li>
+</ul>
+</article>
+
+<article class="project">
+<div class="project-head">
 <h2 id="5-wild"><a href="https://5-wild.com/">5 Wild</a></h2>
 <div class="chips"><span class="chip">TypeScript</span><span class="chip">Web</span><span class="chip">Android</span><span class="chip">GPL-3.0</span></div>
 </div>
@@ -86,6 +121,65 @@ It is a word game that turns into a numbers game.
 <li><a href="https://5-wild.com/"><i class="fas fa-gamepad"></i>Play</a></li>
 <li><a href="https://github.com/jmelahman/5-wild/releases/latest/download/5-wild.apk"><i class="fab fa-android"></i>APK</a></li>
 <li><a href="https://github.com/jmelahman/5-wild"><i class="fab fa-github"></i>Source</a></li>
+</ul>
+</article>
+
+<article class="project">
+<div class="project-head">
+<h2 id="connections"><a href="https://github.com/jmelahman/connections">connections</a></h2>
+<div class="chips"><span class="chip">Go</span><span class="chip">TUI</span><span class="chip">MIT</span></div>
+</div>
+
+A command-line client for the NYT Connections game.
+
+Play the daily puzzle in the terminal: select four words, submit, shuffle, and watch the
+categories fill in as you solve them.
+
+<div class="terminal dark">
+<div class="terminal-bar"><i></i><i></i><i></i><span>connections</span></div>
+<div class="conn"><span class="conn-green">Palindromes: Stats, Nun, Abba, Kayak</span><span class="conn-yellow">Slang For Head: Dome, Coconut, Crown, Skull</span><span class="conn-purple">First In A Comedy Duo: Abbott, Fry, Key, Laurel</span><span class="conn-blue">Police Procedurals: Kojak, Elementary, Bones, Monk</span></div>
+</div>
+
+<ul class="project-links">
+<li><a href="https://github.com/jmelahman/connections"><i class="fab fa-github"></i>Source</a></li>
+<li><a href="https://aur.archlinux.org/packages/connections"><i class="fab fa-linux"></i>AUR</a></li>
+<li><a href="https://pypi.org/project/nyt-connections/"><i class="fab fa-python"></i>PyPI</a></li>
+<li><a href="https://pkg.go.dev/github.com/jmelahman/connections"><i class="fab fa-golang"></i>Go</a></li>
+<li><a href="https://github.com/jmelahman/connections/releases/latest"><i class="fas fa-download"></i>Releases</a></li>
+</ul>
+</article>
+
+<article class="project">
+<div class="project-head">
+<h2 id="nature-sounds"><a href="https://github.com/jmelahman/nature-sounds">nature-sounds</a></h2>
+<div class="chips"><span class="chip">Go</span><span class="chip">CLI</span><span class="chip">MIT</span></div>
+</div>
+
+A lightweight nature sounds player for the command-line.
+
+It plays soundscapes from the National Park Service's A Symphony of Sounds collection,
+recorded in places like Yellowstone and Rocky Mountain National Park, behind a UI inspired
+by pianobar.
+
+<div class="terminal">
+<div class="terminal-bar"><i></i><i></i><i></i><span>nature-sounds</span></div>
+<pre><code><span class="muted">$</span> nature-sounds
+Welcome to nature-sounds (v0.1.0). Press ? for a list of commands.
+<span class="grade">➤</span> "Old Faithful (Remixed)" by "NPS/Jennifer Jerrett and Peter Comley"
+Available commands:
+        p  pause/resume playback
+        q  quit
+        s  select new sound
+<span class="grade">➤</span> "Stream Soundscape from the Black Canyon Trail" by "J. Job"
+<span class="grade">⏸</span> "Soundscape - Lower Geyser Basin (Strong Wind)" by "NPS/Peter Comley"</code></pre>
+</div>
+
+<ul class="project-links">
+<li><a href="https://github.com/jmelahman/nature-sounds"><i class="fab fa-github"></i>Source</a></li>
+<li><a href="https://aur.archlinux.org/packages/nature-sounds"><i class="fab fa-linux"></i>AUR</a></li>
+<li><a href="https://pypi.org/project/nature-sounds/"><i class="fab fa-python"></i>PyPI</a></li>
+<li><a href="https://pkg.go.dev/github.com/jmelahman/nature-sounds"><i class="fab fa-golang"></i>Go</a></li>
+<li><a href="https://github.com/jmelahman/nature-sounds/releases/latest"><i class="fas fa-download"></i>Releases</a></li>
 </ul>
 </article>
 
