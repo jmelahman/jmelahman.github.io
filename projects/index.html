@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Personal website">
+  <meta name="keywords" content="jamison,jamie,lahman">
+  <meta name="author" content="Jamison Lahman">
+  <meta property="og:title" content="Projects" />
+  <meta property="og:image" content="https://jamison.lahman.dev/images/icon.png" />
+  <meta property="og:url" content="jamison.lahman.dev" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jmelahman" />
+  <meta name="twitter:creator" content="@jmelahman" />
+  <meta name="twitter:image" content="https://jamison.lahman.dev/images/icon.png" />
+  <link rel="stylesheet" href="/css/stylesheet.min.css">
+  <link rel="stylesheet" href="/css/kate.css">
+  <link rel="icon" type="image/png" href="/images/icon.png">
+  <title>Projects | Jamison Lahman</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap">
+</head>
+<body>
+<header id="title-block-header">
+  <nav class="stateless">
+    <a href="/" class="" title="Return to the home page">About</a>
+    <a href="/resume" class="" title="Jamison's Resume">Resume</a>
+    <a href="/blog" class="" title="Personal blog">Blog</a>
+    <a href="/feed" class="" title="Reverse blog">Feed</a>
+    <a href="/projects" class="active" title="Open source projects">Projects</a>
+    <div class="right">
+      <a alt="Email" title="Email" href="mailto:jamison@lahman.dev"><i class="fas fa-envelope"></i></a>
+      <a alt="Twitter" title="Twitter" href="https://x.com/jmelahman"><i class="fab fa-twitter"></i></a>
+      <a alt="Strava" title="Strava" href="https://www.strava.com/athletes/jamison_lahman"><i class="fab fa-strava"></i></a>
+      <a alt="GitHub" title="GitHub" href="https://github.com/jmelahman"><i class="fab fa-github"></i></a>
+      <a alt="LinkedIn" title="LinkedIn" href="https://linkedin.com/in/jamison-lahman"><i class="fab fa-linkedin"></i></a>
+      <a alt="RSS" title="RSS" href="/rss"><i class="fas fa-rss"></i> RSS</a>
+    </div>
+  </nav>
+</header>
+<hr>
+<main>
+<article class="project">
+<div class="project-head">
+<h2 id="pkglint">
+<a href="https://github.com/jmelahman/pkglint">pkglint</a>
+</h2>
+<div class="chips">
+<span class="chip">Go</span><span class="chip">Arch Linux</span><span
+class="chip">GPL-3.0</span>
+</div>
+</div>
+<p>A security-focused linter for Arch Linux packages.</p>
+<p>It statically analyzes PKGBUILDs and their install scriptlets without
+ever sourcing them, and reports findings on source integrity, build
+hermeticity, code execution, and persistence, condensed into a letter
+grade per package. It is built on a real bash AST, so the quoting tricks
+that slip past regex-based scanners don’t work here. Built packages are
+inspected too, in the style of namcap, without executing anything from
+the archive.</p>
+<div class="terminal">
+<div class="terminal-bar">
+<i></i><i></i><i></i><span>pkglint</span>
+</div>
+<pre><code><span class="muted">$</span> pkglint ~/pkgbuilds/somepkg
+somepkg: <span class="grade">grade F</span>, 3 finding(s)
+  <span class="muted">PKGBUILD:16:3:</span> <span class="sev-critical">critical</span> [PB304] a network download is piped straight into bash and executed
+  <span class="muted">PKGBUILD:11:1:</span> <span class="sev-error">error</span> [PB101] remote source "http://..." has no checksum (SKIP): the download is never verified
+  <span class="muted">PKGBUILD:24:3:</span> <span class="sev-warn">warn</span> [PB403] chmod 4755 creates a setuid/setgid file
+
+1 package linted: 1 with findings
+1 finding(s) fixable with --unsafe-fix</code></pre>
+</div>
+<ul class="project-links">
+<li>
+<a href="https://github.com/jmelahman/pkglint"><i class="fab fa-github"></i>Source</a>
+</li>
+<li>
+<a href="https://aur.archlinux.org/packages/pkglint"><i class="fab fa-linux"></i>AUR</a>
+</li>
+<li>
+<a href="https://pypi.org/project/pkglint/"><i class="fab fa-python"></i>PyPI</a>
+</li>
+<li>
+<a href="https://pkg.go.dev/github.com/jmelahman/pkglint"><i class="fab fa-golang"></i>Go</a>
+</li>
+<li>
+<a href="https://github.com/jmelahman/pkglint/releases/latest"><i class="fas fa-download"></i>Releases</a>
+</li>
+</ul>
+</article>
+<article class="project">
+<div class="project-head">
+<h2 id="aur-report-card">
+<a href="https://jamison.lahman.dev/pkglint/">AUR Report Card</a>
+</h2>
+<div class="chips">
+<span class="chip">Static site</span><span class="chip">pkglint</span>
+</div>
+</div>
+<p>Generated reports on the quality of every PKGBUILD in the Arch User
+Repository and the official Arch repositories.</p>
+<p>Each package is statically analyzed by pkglint and given a letter
+grade, from A for no warnings down to F for a critical finding. Every
+package gets its own page listing each finding and whether it is
+auto-fixable, and the full results are published as JSON.</p>
+<div class="grades"
+aria-label="Distribution of letter grades across scanned packages">
+<div class="grade-bar">
+<span class="band-A" style="flex-grow: 24870">A</span><span
+class="band-B" style="flex-grow: 17009">B</span><span class="band-C"
+style="flex-grow: 3441">C</span><span class="band-D"
+style="flex-grow: 2093">D</span><span class="band-F"
+style="flex-grow: 206">F</span>
+</div>
+<div class="grade-caption">
+grade distribution across scanned packages
+</div>
+</div>
+<ul class="project-links">
+<li>
+<a href="https://jamison.lahman.dev/pkglint/"><i class="fas fa-clipboard-check"></i>Report
+card</a>
+</li>
+<li>
+<a href="https://jamison.lahman.dev/pkglint/rules/"><i class="fas fa-list-check"></i>Rules</a>
+</li>
+<li>
+<a href="https://jamison.lahman.dev/pkglint/results.json"><i class="fas fa-code"></i>JSON</a>
+</li>
+<li>
+<a href="https://github.com/jmelahman/pkglint"><i class="fab fa-github"></i>Source</a>
+</li>
+</ul>
+</article>
+<article class="project">
+<div class="project-head">
+<h2 id="5-wild">
+<a href="https://5-wild.com/">5 Wild</a>
+</h2>
+<div class="chips">
+<span class="chip">TypeScript</span><span class="chip">Web</span><span
+class="chip">Android</span><span class="chip">GPL-3.0</span>
+</div>
+</div>
+<p>A word-guessing roguelike.</p>
+<p>Guess the five letter word, but every guess you play is also a hand
+you score. Letters score points based on how rare they are, the green
+and yellow feedback multiplies them, and the relics you buy between
+rounds quietly rewrite the arithmetic underneath. Bosses break a rule
+you were relying on every third round. It is a word game that turns into
+a numbers game.</p>
+<div class="tiles" aria-hidden="true">
+<span class="tile tile-green">W</span><span
+class="tile tile-gray">I</span><span
+class="tile tile-yellow">L</span><span
+class="tile tile-gray">D</span><span class="tile tile-green">S</span>
+</div>
+<ul class="project-links">
+<li>
+<a href="https://5-wild.com/"><i class="fas fa-gamepad"></i>Play</a>
+</li>
+<li>
+<a href="https://github.com/jmelahman/5-wild/releases/latest/download/5-wild.apk"><i class="fab fa-android"></i>APK</a>
+</li>
+<li>
+<a href="https://github.com/jmelahman/5-wild"><i class="fab fa-github"></i>Source</a>
+</li>
+</ul>
+</article>
+<article class="project">
+<div class="project-head">
+<h2 id="pkgbuilds">
+<a href="https://github.com/jmelahman/PKGBUILDs">PKGBUILDs</a>
+</h2>
+<div class="chips">
+<span class="chip">Shell</span><span class="chip">Arch Linux</span><span
+class="chip">MIT</span>
+</div>
+</div>
+<p>The packages I maintain for the Arch User Repository, in one
+repository.</p>
+<p>Each package is a git subtree that is pushed to the AUR automatically
+on merge. nvchecker watches upstream for new releases and opens a pull
+request overnight when one lands, and CI builds every package in a clean
+container with shellcheck and pkglint running over the whole tree.</p>
+<div class="terminal">
+<div class="terminal-bar">
+<i></i><i></i><i></i><span>PKGBUILDs</span>
+</div>
+<pre class="wrap"><code><span class="muted">$</span> ls
+<span class="nb">agent-deck</span>  <span class="nb">aligo</span>  <span class="nb">annas-mcp</span>  <span class="nb">aws-doctor</span>  <span class="nb">blipgloss</span>  <span class="nb">brev-cli</span>  <span class="nb">buildifier</span>  <span class="nb">buildozer</span>  <span class="nb">captain</span>  <span class="nb">cascadia</span>  <span class="nb">cert</span>  <span class="nb">cfnctl</span>  <span class="nb">check-symlinks</span>  <span class="nb">checkip</span>  <span class="nb">clive</span>  <span class="nb">cloud189</span>  <span class="nb">cls3</span>  <span class="nb">codeowners</span>  <span class="nb">comigo</span>  <span class="nb">connections</span>  <span class="nb">cycle-cli</span>  <span class="nb">docker-debug</span>  <span class="nb">dockerfilegraph</span>  <span class="nb">enpasscli</span>  <span class="nb">faas-cli</span>  <span class="nb">fil</span>  <span class="nb">gh-eco</span>  <span class="nb">gh-markdown-preview</span>  <span class="nb">gh-s</span>  <span class="nb">git-orchard</span>  <span class="nb">gitcs</span>  <span class="nb">go-carpet</span>  <span class="nb">go-global-update</span>  <span class="nb">go-grip</span>  <span class="muted nb">… 107 packages</span></code></pre>
+</div>
+<ul class="project-links">
+<li>
+<a href="https://github.com/jmelahman/PKGBUILDs"><i class="fab fa-github"></i>Source</a>
+</li>
+<li>
+<a href="https://aur.archlinux.org/packages?K=jmelahman&amp;SeB=m"><i class="fab fa-linux"></i>AUR</a>
+</li>
+</ul>
+</article>
+</main>
+</body>
+</html>

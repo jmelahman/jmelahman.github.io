@@ -34,6 +34,7 @@ applications" />
     <a href="/resume" class="" title="Jamison's Resume">Resume</a>
     <a href="/blog" class="active" title="Personal blog">Blog</a>
     <a href="/feed" class="" title="Reverse blog">Feed</a>
+    <a href="/projects" class="" title="Open source projects">Projects</a>
     <div class="right">
       <a alt="Email" title="Email" href="mailto:jamison@lahman.dev"><i class="fas fa-envelope"></i></a>
       <a alt="Twitter" title="Twitter" href="https://x.com/jmelahman"><i class="fab fa-twitter"></i></a>
@@ -242,7 +243,7 @@ class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a hr
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>        goos <span class="op">=</span> os.getenv(<span class="st">&quot;GOOS&quot;</span>)</span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>        goarch <span class="op">=</span> os.getenv(<span class="st">&quot;GOARCH&quot;</span>)</span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> goos <span class="kw">and</span> goarch:</span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            build_data[<span class="st">&quot;tag&quot;</span>] <span class="op">=</span> <span class="st">&quot;py3-none-&quot;</span> <span class="op">+</span> manygo.get_platform_tag(goos<span class="op">=</span>goos, goarch<span class="op">=</span>goarch)</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>            build_data[<span class="st">&quot;tag&quot;</span>] <span class="op">=</span> <span class="st">&quot;py3-none-&quot;</span> <span class="op">+</span> manygo.get_platform_tag(goos<span class="op">=</span>goos, goarch<span class="op">=</span>goarch)  <span class="co"># type: ignore[invalid-argument-type]</span></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>        binary_name <span class="op">=</span> <span class="va">self</span>.config[<span class="st">&quot;binary_name&quot;</span>]</span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>        tag <span class="op">=</span> os.getenv(<span class="st">&quot;GITHUB_REF_NAME&quot;</span>, <span class="st">&quot;dev&quot;</span>)</span>
 <span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>        commit <span class="op">=</span> os.getenv(<span class="st">&quot;GITHUB_SHA&quot;</span>, <span class="st">&quot;none&quot;</span>)</span>
