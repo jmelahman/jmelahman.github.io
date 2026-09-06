@@ -110,6 +110,6 @@ running over the whole tree.
 
 <ul class="project-links">
 <li><a href="https://github.com/jmelahman/PKGBUILDs"><i class="fab fa-github"></i>Source</a></li>
-<li><a href="https://aur.archlinux.org/packages?K=jmelahman&amp;SeB=m"><i class="fab fa-linux"></i>AUR</a></li>
+<li><a href="https://aur.archlinux.org/packages?K=Jamison&amp;SeB=m"><i class="fab fa-linux"></i>AUR</a></li>
 </ul>
 </article>
