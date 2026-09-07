@@ -4,6 +4,33 @@ nav_projects: true
 ---
 <article class="project">
 <div class="project-head">
+<h2 id="aur-report-card"><a href="https://jamison.lahman.dev/pkglint/">AUR Report Card</a></h2>
+<div class="chips"><span class="chip">Static site</span><span class="chip">pkglint</span></div>
+</div>
+
+Generated reports on the quality of every PKGBUILD in the Arch User Repository and the
+official Arch repositories.
+
+Each package is statically analyzed by pkglint and given a letter grade, from A for no
+warnings down to F for a critical finding.
+Every package gets its own page listing each finding and whether it is auto-fixable, and
+the full results are published as JSON.
+
+<div class="grades" aria-label="Distribution of letter grades across scanned packages">
+<div class="grade-bar"><span class="band-A" style="flex-grow: 24870">A</span><span class="band-B" style="flex-grow: 17009">B</span><span class="band-C" style="flex-grow: 3441">C</span><span class="band-D" style="flex-grow: 2093">D</span><span class="band-F" style="flex-grow: 206">F</span></div>
+<div class="grade-caption">grade distribution across scanned packages</div>
+</div>
+
+<ul class="project-links">
+<li><a href="https://jamison.lahman.dev/pkglint/"><i class="fas fa-clipboard-check"></i>Report card</a></li>
+<li><a href="https://jamison.lahman.dev/pkglint/rules/"><i class="fas fa-list-check"></i>Rules</a></li>
+<li><a href="https://jamison.lahman.dev/pkglint/results.json"><i class="fas fa-code"></i>JSON</a></li>
+<li><a href="https://github.com/jmelahman/pkglint"><i class="fab fa-github"></i>Source</a></li>
+</ul>
+</article>
+
+<article class="project">
+<div class="project-head">
 <h2 id="pkglint"><a href="https://github.com/jmelahman/pkglint">pkglint</a></h2>
 <div class="chips"><span class="chip">Go</span><span class="chip">Arch Linux</span><span class="chip">GPL-3.0</span></div>
 </div>
@@ -36,33 +63,6 @@ somepkg: <span class="grade">grade F</span>, 3 finding(s)
 <li><a href="https://pypi.org/project/pkglint/"><i class="fab fa-python"></i>PyPI</a></li>
 <li><a href="https://pkg.go.dev/github.com/jmelahman/pkglint"><i class="fab fa-golang"></i>Go</a></li>
 <li><a href="https://github.com/jmelahman/pkglint/releases/latest"><i class="fas fa-download"></i>Releases</a></li>
-</ul>
-</article>
-
-<article class="project">
-<div class="project-head">
-<h2 id="aur-report-card"><a href="https://jamison.lahman.dev/pkglint/">AUR Report Card</a></h2>
-<div class="chips"><span class="chip">Static site</span><span class="chip">pkglint</span></div>
-</div>
-
-Generated reports on the quality of every PKGBUILD in the Arch User Repository and the
-official Arch repositories.
-
-Each package is statically analyzed by pkglint and given a letter grade, from A for no
-warnings down to F for a critical finding.
-Every package gets its own page listing each finding and whether it is auto-fixable, and
-the full results are published as JSON.
-
-<div class="grades" aria-label="Distribution of letter grades across scanned packages">
-<div class="grade-bar"><span class="band-A" style="flex-grow: 24870">A</span><span class="band-B" style="flex-grow: 17009">B</span><span class="band-C" style="flex-grow: 3441">C</span><span class="band-D" style="flex-grow: 2093">D</span><span class="band-F" style="flex-grow: 206">F</span></div>
-<div class="grade-caption">grade distribution across scanned packages</div>
-</div>
-
-<ul class="project-links">
-<li><a href="https://jamison.lahman.dev/pkglint/"><i class="fas fa-clipboard-check"></i>Report card</a></li>
-<li><a href="https://jamison.lahman.dev/pkglint/rules/"><i class="fas fa-list-check"></i>Rules</a></li>
-<li><a href="https://jamison.lahman.dev/pkglint/results.json"><i class="fas fa-code"></i>JSON</a></li>
-<li><a href="https://github.com/jmelahman/pkglint"><i class="fab fa-github"></i>Source</a></li>
 </ul>
 </article>
 
